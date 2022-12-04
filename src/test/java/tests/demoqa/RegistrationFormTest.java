@@ -16,7 +16,7 @@ public class RegistrationFormTest extends TestBase{
                     executeJavaScript("$('footer').remove()");
                     executeJavaScript("$('#fixedban').remove()");
         });
-        step("Open registrations form", () -> {
+        step("Checking the form filling", () -> {
         open("/automation-practice-form");
         $("#firstName").setValue("Julija");
         $("#lastName").setValue("Ivanova");
@@ -39,7 +39,7 @@ public class RegistrationFormTest extends TestBase{
         $("#stateCity-wrapper").$(byText("Gurgaon")).click();
         $("#submit").click();
         });
-        step("Open registrations form", () -> {
+        step("Checking the result", () -> {
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text("Julija Ivanova"),
                 text("Ivanova@mail.ru"),
